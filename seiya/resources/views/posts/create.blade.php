@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                             <label for="description" class="block text-sm font-medium text-gray-700">メタディスクリプション</label>
-                            <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" name="description" id="summernote" cols="30" rows="10"></textarea>
+                            <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" name="description" id="description"  cols="30" rows="10"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded hover:bg-red-700 transition duration-300">保存</button>
                     </form>
@@ -33,12 +33,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $('#summernote').summernote({
-            placeholder: 'Enter your post content here',
-            tabsize: 2,
-            height: 200
-        });
-    </script>
 </x-app-layout>

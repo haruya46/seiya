@@ -27,6 +27,16 @@ class ArticleController extends Controller
         $article->save();
         return redirect()->route('posts.index', $article);
     }
+    public function image (Request $request){
+        $result=$request->file('file')->isValid();
+        if($result){
+            $filename = $request->file->getClientOriginalName();
+            $file=$request->file('file')->move('temp', $filename);
+            echo '/temp/'.$filename;
+        }
+    }
+
+
     public function index(){
         $article=Article::all();
         return view('posts.index',compact('article'));

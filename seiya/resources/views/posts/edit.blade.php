@@ -11,7 +11,6 @@
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <form method="post" action="{{route('posts.update', $article)}}" enctype="multipart/form-data" class="space-y-6">
                         @csrf
-                        @method('PUT') <!-- 更新用メソッド指定 -->
 
                         <div class="form-group">
                             <label for="title" class="block text-sm font-medium text-gray-700">件名</label>
@@ -48,11 +47,4 @@
         </div>
     </div>
 
-    <script>
-        $('#summernote').summernote({
-            placeholder: 'Enter your content here',
-            tabsize: 2,
-            height: 200
-        });
-    </script>
 </x-app-layout>

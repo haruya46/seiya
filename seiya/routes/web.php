@@ -15,6 +15,8 @@ Route::controller(ContactController::class)->group(function(){
     Route::post('contact/store', 'store')->name('contact');
 });
 
+
+Route::post('/summernote/temp', [ArticleController::class, 'image'])->name('summernote.image');
 Route::post('/posts/store', [ArticleController::class, 'store'])->name('posts.store');
 Route::get('/posts/create', [ArticleController::class, 'create'])->name('posts.create');
 Route::get('/posts/index', [ArticleController::class, 'index'])->name('posts.index');

@@ -74,6 +74,9 @@
             <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
                 投稿画面
             </x-nav-link>
+            <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
+                投稿一覧
+            </x-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -86,10 +89,12 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                <x-responsive-nav-link :href="route('posts.create')">
+                    投稿画面
                 </x-responsive-nav-link>
-
+                <x-responsive-nav-link :href="route('posts.index')">
+                    投稿一覧
+                </x-responsive-nav-link>
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
