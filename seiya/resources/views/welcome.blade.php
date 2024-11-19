@@ -71,7 +71,9 @@
             <div class="space-y-8">
                 @foreach ($article->take(5) as $articles)
                     <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 mb-8"> <!-- Added bottom margin -->
-                        <img src="{{ asset('storage/images/'.$articles->image) }}" alt="Article Image" class="w-full lg:w-1/3 h-64 lg:h-64 object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-t-none">
+                     
+                            <img src="{{ asset('storage/images/'.$articles->image) }}" alt="Article Image" class="w-full lg:w-1/3 h-64 lg:h-64 object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-t-none">
+                    
                         <div class="p-6 flex flex-col justify-between w-full lg:w-2/3">
                             <div>
                                 <a href="{{ route('show', $articles) }}" class="text-blue-500 hover:text-blue-700 text-base sm:text-lg font-semibold">

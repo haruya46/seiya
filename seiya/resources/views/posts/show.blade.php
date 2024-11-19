@@ -21,17 +21,13 @@
                                 {{$article->description}}
                             </p>
                         </div>
+                        <div class="mt-4 ">
+                            <img src="{{ asset('storage/images/'.$article->image) }}" alt="{{ $article->title }}" class="w-full h-auto max-h-64 object-cover rounded-lg">
+                        </div>
                         <h1 class="text-lg text-gray-700 font-semibold mt-2">
                             {{ $article->title }}
                         </h1>
-
-                        <div class="mt-4">
-                            <img src="{{ asset('storage/images/'.$article->image) }}" alt="{{ $article->title }}" class="w-full h-auto max-h-64 object-cover rounded-lg">
-                        </div>
-
-                        <hr class="w-full my-4">
-                        
-                        <p class="mt-4 text-gray-600 py-4 whitespace-pre-line">{!! $article->body !!}</p>
+                        <p class="mt-4 text-gray-600 py-1 whitespace-pre-line">{!! $article->body !!}</p>
                         
                         <div class="text-sm font-semibold flex justify-end">
                             <p>{{$article->created_at->diffForHumans()}}</p>
