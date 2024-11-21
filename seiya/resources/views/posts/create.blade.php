@@ -1,9 +1,4 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            ブログ投稿画面
-        </h2>
-    </x-slot>
+<x-hp-layout>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-center">
@@ -33,4 +28,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-hp-layout>

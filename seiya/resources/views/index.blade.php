@@ -1,4 +1,4 @@
-<x-hp-layout id="home">
+<x-hp-layout>
     @section('description', 'ここはブログ一覧です！phpもしくはlaravelに関するスキルや実績を発信しています')
 {{-- 投稿一覧表示用のコード --}}
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
                 <div class="p-6 flex flex-col justify-between w-full sm:w-2/3">
                     <div>
                         <a href="{{ route('show', $articles) }}" class="text-blue-500 hover:text-blue-700 text-base sm:text-lg font-semibold">
-                            <h3 class="text-2xl text-gray-800 hover:underline cursor-pointer">{{$articles->title}}</h3>
+                            <h2 class="text-2xl text-gray-800 hover:underline cursor-pointer">{{$articles->title}}</h2>
                         </a>
                         <p class="text-gray-600 text-sm mt-2">Last updated: {{$articles->updated_at->format('M d, Y')}}</p>
                     </div>

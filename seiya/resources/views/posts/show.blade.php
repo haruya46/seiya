@@ -1,4 +1,4 @@
-<x-hp-layout id="home">
+<x-hp-layout>
     @section('description', $article->description)
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-4 sm:p-8">

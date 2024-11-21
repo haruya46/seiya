@@ -10,9 +10,9 @@
                                  alt="{{ $article->title }}" 
                                  class="w-full h-auto max-h-64 sm:max-h-80 lg:max-h-96 object-cover rounded-lg"> <!-- Restored original image size -->
                         </div>
-                        <h1 class="text-xl sm:text-2xl lg:text-3xl text-gray-700 font-semibold"> <!-- Restored original font size -->
+                        <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-700 font-semibold"> <!-- Restored original font size -->
                             {{ $article->title }}
-                        </h1>
+                        </h2>
 
                         <p class="mt-4 text-sm sm:text-base lg:text-lg text-gray-600 py-1 whitespace-pre-line"> <!-- Restored original font size for body text -->
                             {!! $article->body !!}
