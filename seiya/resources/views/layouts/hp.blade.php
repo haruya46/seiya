@@ -80,7 +80,7 @@
         </header>
 
         <!-- Page Content -->
-        <main class="py-6 px-4">
+        <main>
             {{ $slot }}
         </main>
 

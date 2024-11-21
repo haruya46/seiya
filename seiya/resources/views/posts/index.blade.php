@@ -3,9 +3,8 @@
 
     {{-- 投稿一覧表示用のコード --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="space-y-6">
             @foreach ($article as $articles)
-                <div class="flex flex-col sm:flex-row bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex flex-col sm:flex-row bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 my-6">
                     <img src="{{ asset('storage/images/'.$articles->image) }}" alt="Article Image" class="w-full sm:w-1/3 h-64 object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-t-none">
                     <div class="p-6 flex flex-col justify-between w-full sm:w-2/3">
                         <div>
@@ -23,7 +22,6 @@
                     </div>
                 </div>
             @endforeach
-        </div>
     </div>
     
 </x-hp-layout>
