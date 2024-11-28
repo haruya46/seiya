@@ -12,6 +12,15 @@ class ArticleController extends Controller
         return view('posts.create');
     }
  
+    public function image (Request $request){
+        $result=$request->file('file')->isValid();
+        if($result){
+            $filename = $request->file->getClientOriginalName();
+            $file=$request->file('file')->move('temp', $filename);
+            echo '/temp/'.$filename;
+        }
+    }
+
     public function store(Request $request){
         $article=new Article();
         $article->fill([
@@ -26,14 +35,6 @@ class ArticleController extends Controller
         }
         $article->save();
         return redirect()->route('posts.index', $article);
-    }
-    public function image (Request $request){
-        $result=$request->file('file')->isValid();
-        if($result){
-            $filename = $request->file->getClientOriginalName();
-            $file=$request->file('file')->move('temp', $filename);
-            echo '/temp/'.$filename;
-        }
     }
 
 

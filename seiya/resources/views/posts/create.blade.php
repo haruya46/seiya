@@ -1,5 +1,4 @@
 <x-hp-layout>
-
     <div class="container mx-auto ">
         <div class="flex justify-center">
             <div class="w-full max-w-3xl">
@@ -11,8 +10,8 @@
                             <input type="text" name="title" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" id="title" placeholder="Enter Title">
                         </div>
                         <div class="form-group">
-                            <label for="body" class="block text-sm font-medium text-gray-700">投稿本文</label>
-                            <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" name="body" id="summernote" cols="30" rows="10"></textarea>
+                            <label for="body"  class="block text-sm font-medium text-gray-700">投稿本文</label>
+                            <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" name="body"  id="summernote" cols="30" rows="10"></textarea>
                         </div>
                         <div class="w-full flex flex-col">
                             <label for="image" class="font-semibold leading-none mt-4">サムネイル</label>

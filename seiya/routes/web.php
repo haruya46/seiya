@@ -28,13 +28,14 @@ Route::controller(ContactController::class)->group(function(){
     Route::get('/posts/create', [ArticleController::class, 'create'])->name('posts.create');
     Route::post('/posts/store', [ArticleController::class, 'store'])->name('posts.store');
     Route::get('/posts/index', [ArticleController::class, 'index'])->name('posts.index');
-    Route::post('/summernote/temp', [ArticleController::class, 'image'])->name('summernote.image');
     Route::get('/posts/{article}', [ArticleController::class, 'show'])->name('posts.show');
     Route::get('/posts/{article}/edit', [ArticleController::class, 'edit'])->name('posts.edit');
     Route::post('/posts/{article}', [ArticleController::class, 'update'])->name('posts.update');
     Route::delete('/posts/{article}/destroy', [ArticleController::class, 'destroy'])->name('posts.destroy');
+    // 画像保存用 
     // ここまでがblog
 });
+Route::post('/posts/temp', [ArticleController::class, 'image'])->name('posts.temp');
 
 
 //ログイン後のプロフィール

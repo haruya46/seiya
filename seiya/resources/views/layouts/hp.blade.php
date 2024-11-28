@@ -5,12 +5,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @if(session('robots'))
+    <meta name="robots" content="{{ session('robots') }}">
+    @else
+    <meta name="robots" content="{{ session('robots', 'index') }}">
+    @endif
+
     <title>LinkCreativeEncourage</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <!-- Scripts -->
+     <!-- Scripts -->
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @if(session('created'))
+        <div class="alert alert-success">{{session('created')}}</div>
+        @endif
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans antialiased flex">
@@ -99,6 +117,41 @@
 
         hamburger.addEventListener('click', () => {
             sidebar.classList.toggle('-translate-x-full');
+        });
+        //サマーノート
+        jQuery(document).ready(function($) {
+            $('#summernote').summernote({
+                placeholder: 'Hello Bootstrap 4',
+                tabsize: 2,
+                height: 500,
+                callbacks: 
+                {
+                    onImageUpload : function(files, editor, welEditable) 
+                    {
+                        for(var i = files.length - 1; i >= 0; i--) 
+                        {
+                            sendFile(files[i], this);
+                        }
+                    }
+                } 
+            });
+            function sendFile(file, el) {
+            var form_data = new FormData();
+            form_data.append('file', file);
+
+                $.ajax({
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data: form_data,
+                    type: "POST",
+                    contentType: false,
+                    url: '{{ route('posts.temp') }}',
+                    cache: false,
+                    processData: false,
+                    success: function(url) {
+                    $(el).summernote('editor.insertImage', url);
+                    }
+                });
+            }
         });
     </script>
 </body>
