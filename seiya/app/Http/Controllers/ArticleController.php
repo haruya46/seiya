@@ -11,15 +11,21 @@ class ArticleController extends Controller
  
         return view('posts.create');
     }
- 
-    public function image (Request $request){
-        $result=$request->file('file')->isValid();
-        if($result){
-            $filename = $request->file->getClientOriginalName();
-            $file=$request->file('file')->move('temp', $filename);
-            echo '/temp/'.$filename;
+
+    public function image(Request $request)
+    {
+        dd("kokonikita");
+        if ($request->file('file')->isValid()) {
+            $filename = $request->file('file')->getClientOriginalName();
+            $path = $request->file('file')->move(public_path('temp'), $filename);
+    
+            // 公開URLを返す
+            return response('/temp/' . $filename);
         }
+    
+        return response('Invalid file upload', 400);
     }
+    
 
     public function store(Request $request){
         $article=new Article();

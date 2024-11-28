@@ -136,21 +136,20 @@
                 } 
             });
             function sendFile(file, el) {
-            var form_data = new FormData();
-            form_data.append('file', file);
-
-                $.ajax({
-                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                    data: form_data,
-                    type: "POST",
-                    contentType: false,
-                    url: '{{ route('posts.temp') }}',
-                    cache: false,
-                    processData: false,
-                    success: function(url) {
-                    $(el).summernote('editor.insertImage', url);
-                    }
-                });
+                var form_data = new FormData();
+                form_data.append('file', file);
+                        $.ajax({
+                            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                            data: form_data,
+                            type: "POST",
+                            contentType: false,
+                            url: 'temp',
+                            cache: false,
+                            processData: false,
+                            success: function (url) {
+                                $(el).summernote('editor.insertImage', url);
+                            },
+                        });
             }
         });
     </script>
