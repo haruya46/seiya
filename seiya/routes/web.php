@@ -24,7 +24,8 @@ Route::controller(ContactController::class)->group(function(){
 
 // 管理者画面
 // blog機能
-    Route::middleware(['auth', 'can:admin'])->group(function () {
+Route::middleware(['auth', 'can:admin'])->group(function () {
+    Route::post('/posts/temp', [ArticleController::class, 'image'])->name('posts.temp');
     Route::get('/posts/create', [ArticleController::class, 'create'])->name('posts.create');
     Route::post('/posts/store', [ArticleController::class, 'store'])->name('posts.store');
     Route::get('/posts/index', [ArticleController::class, 'index'])->name('posts.index');
@@ -35,7 +36,6 @@ Route::controller(ContactController::class)->group(function(){
     // 画像保存用 
     // ここまでがblog
 });
-Route::post('/posts/temp', [ArticleController::class, 'image'])->name('posts.temp');
 
 
 //ログイン後のプロフィール
