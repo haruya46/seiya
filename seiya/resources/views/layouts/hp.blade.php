@@ -117,40 +117,7 @@
         hamburger.addEventListener('click', () => {
             sidebar.classList.toggle('-translate-x-full');
         });
-        //サマーノート
-        jQuery(document).ready(function($) {
-            $('#summernote').summernote({
-                placeholder: 'Hello Bootstrap 4',
-                tabsize: 2,
-                height: 500,
-                callbacks: 
-                {
-                    onImageUpload : function(files, editor, welEditable) 
-                    {
-                        for(var i = files.length - 1; i >= 0; i--) 
-                        {
-                            sendFile(files[i], this);
-                        }
-                    }
-                } 
-            });
-            function sendFile(file, el) {
-                var form_data = new FormData();
-                form_data.append('file', file);
-                        $.ajax({
-                            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                            data: form_data,
-                            type: "POST",
-                            contentType: false,
-                            url:  'temp',
-                            cache: false,
-                            processData: false,
-                            success: function (url) {
-                                $(el).summernote('editor.insertImage', url);
-                            },
-                        });
-            }
-        });
+        
     </script>
 </body>
 

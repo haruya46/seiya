@@ -20,6 +20,7 @@ class ArticleController extends Controller
             echo '/temp/'.$filename;
         }
     }
+
     
 
     public function store(Request $request){
