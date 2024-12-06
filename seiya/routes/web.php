@@ -33,6 +33,7 @@ Route::middleware(['auth', 'can:admin'])->group(function () {
     Route::post('/posts/{article}/edit/temp', [ArticleController::class, 'image'])->name('posts{article}.temp');
     Route::post('/posts/{article}', [ArticleController::class, 'update'])->name('posts.update');
     Route::delete('/posts/{article}/destroy', [ArticleController::class, 'destroy'])->name('posts.destroy');
+    Route::get('PostStatus/{article_id}', [ArticleController::class, 'PostStatus'])->name('PostStatus');
     // 画像保存用 
     // ここまでがblog
 });

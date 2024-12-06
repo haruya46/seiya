@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Access_controls;
 use Illuminate\Http\Request;
 use App\Models\Article;
 
@@ -12,6 +12,30 @@ class ArticleController extends Controller
         return view('posts.create');
     }
 
+    public function PostStatus($article_id)
+    {
+        // 指定された post_id のレコードを取得
+        $access_controls = Access_controls::where('post_id', $article_id)->first();
+    
+        if ($access_controls === null) {
+            // レコードが存在しない場合、新規作成
+            $access_controls = new Access_controls;
+            $access_controls->post_id = $article_id;
+            $access_controls->status = 1; // 初期ステータスを 1 に設定
+            $access_controls->save();
+        } else {
+            // レコードが存在する場合、ステータスをトグル
+            if ($access_controls->status == 0) {
+                $access_controls->status = 1;
+            } else if ($access_controls->status == 1) {
+                $access_controls->status = 0;
+            }
+            $access_controls->save();
+        }
+    
+        return $access_controls->status;
+    }
+    
     public function image (Request $request){
         $result=$request->file('file')->isValid();
         if($result){

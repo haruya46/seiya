@@ -47,7 +47,7 @@
         </div>
 
         <!-- Search Bar -->
-        <div class="px-4 py-2">
+        {{-- <div class="px-4 py-2">
             <form action="" >
                 <label for="site-search" class="sr-only">サイト内検索</label>
                 <div class="relative">
@@ -62,13 +62,11 @@
                     </button>
                 </div>
             </form>
-        </div>
+        </div> --}}
 
         <nav>
             <ul class="space-y-4 px-4">
                 <li><a href="{{ route('blog') }}" class="block hover:bg-blue-700 p-2 rounded">学習</a></li>
-                <li><a href="{{ route('Board') }}" class="block hover:bg-blue-700 p-2 rounded">小さな成功掲示板</a></li>
-                <li><a href="{{ route('question') }}" class="block hover:bg-blue-700 p-2 rounded">Q&A</a></li>
                 <li><a href="{{ route('foam') }}" class="block hover:bg-blue-700 p-2 rounded">お問い合わせ</a></li>
                 <li><a href="{{ route('site') }}" class="block hover:bg-blue-700 p-2 rounded">サイトについて</a></li>
                 @can('admin')
