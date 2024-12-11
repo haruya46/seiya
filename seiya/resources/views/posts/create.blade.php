@@ -1,7 +1,7 @@
 <x-hp-layout>
     <div class="container mx-auto ">
         <div class="flex justify-center">
-            <div class="w-full max-w-3xl">
+            <div class="w-full max-w-8xl">
                 <div class="bg-white shadow-md rounded-lg">
                     <form method="post" action="{{route('posts.store')}}" enctype="multipart/form-data" class="space-y-6">
                         @csrf

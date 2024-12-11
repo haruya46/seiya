@@ -1,7 +1,7 @@
 <x-hp-layout>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-center">
-            <div class="w-full max-w-3xl mt-6">
+            <div class="w-full max-w-8xl mt-6">
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <form method="post" action="{{route('posts.update', $article)}}" enctype="multipart/form-data" class="space-y-6">
                         @csrf

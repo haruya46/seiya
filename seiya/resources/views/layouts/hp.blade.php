@@ -33,7 +33,7 @@
 
 <body class="bg-gray-50 text-gray-900 font-sans antialiased flex">
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed top-0 left-0 w-64 h-screen bg-black text-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform">
+    <aside id="sidebar" class="z-20 fixed top-0 left-0 w-64 h-screen bg-black text-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform">
         <div class="p-4 flex justify-between items-center">
             <p class="text-lg font-bold">Menu</p>
             <!-- User Info -->

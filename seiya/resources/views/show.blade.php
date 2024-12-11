@@ -40,6 +40,7 @@
         }
         .custom-mobile-padding img {
             max-height: 160px; /* Reduced image height for mobile */
+            max-width: 640;
         }
     }
 </style>
